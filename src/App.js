@@ -1,18 +1,12 @@
-import { ToastContainer } from 'react-toastify';
 import './App.css';
-import Card from './components/main/Card';
-import Navbar from './components/navbar/Navbar';
 import 'react-toastify/dist/ReactToastify.css';
+import { routs } from './routs';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const App = () => {
+  const router = createBrowserRouter(routs);
   return (
-    <>
-      <Navbar />
-      <div className='mt-5'>
-        <Card />
-      </div>
-      <ToastContainer autoClose={4000} draggable theme='dark' />
-    </>
+    <RouterProvider router={router} />
   );
 }
 
